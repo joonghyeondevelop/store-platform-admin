@@ -1,0 +1,6 @@
+.header {
+    min-width: 0px;
+    min-height: 60px;
+    width: calc(100% - 0px);
+    height: max-content;
+}
