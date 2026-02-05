@@ -26,23 +26,24 @@ const Pagination = ({
                 <li className={`${styles.move} ${noPrev && styles.invisible}`}>
                     <Link to={`?page=${start - 1}`}>이전</Link>
                 </li>
-                {[...Array(pageCount)].map((a, i) => (
-                    <>
-                        {start + i <= totalPages && (
-                            <li key={i}>
-                                <Link
-                                    className={`${styles.page} ${
-                                        currentPage === start + i &&
-                                        styles.active
-                                    }`}
-                                    to={`?page=${start + i}`}
-                                >
-                                    {start + i}
-                                </Link>
-                            </li>
-                        )}
-                    </>
-                ))}
+                {[...Array(pageCount)].map((_, i) => {
+                    const page = start + i;
+
+                    if (page > totalPages) return null;
+
+                    return (
+                        <li key={page}>
+                            <Link
+                                className={`${styles.page} ${
+                                    currentPage === page && styles.active
+                                }`}
+                                to={`?page=${page}`}
+                            >
+                                {page}
+                            </Link>
+                        </li>
+                    );
+                })}
                 <li className={`${styles.move} ${noNext && styles.invisible}`}>
                     <Link to={`?page=${start + pageCount}`}>다음</Link>
                 </li>

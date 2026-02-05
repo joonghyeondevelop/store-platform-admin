@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react";
-import { mockUsers } from "../../../data/userData";
-import { User } from "../../../data/userData.type";
+import { useState } from "react";
 import "./dataTable.css";
-import { dataTable } from "./dataTable.type";
+import { DataGridProps } from "./dataTable.type";
 import DataTableHeader from "./DataTableHeader";
 import DataTableRow from "./DataTableRow";
 import Pagination from "../../common/pagination/Pagination";
 import { useSearchParams } from "react-router-dom";
 
-const DataTable = ({ items }: dataTable) => {
-    const [users, setUsers] = useState<User[]>(mockUsers);
+const DataTable = <T extends { id: string | number }>({
+    headerItems,
+    rows,
+    columns,
+}: DataGridProps<T>) => {
+    const [users, setUsers] = useState<T[]>(rows);
     const totalUsers = users.length;
     const [searchParams] = useSearchParams();
     const pageParam = searchParams.get("page");
@@ -27,13 +29,13 @@ const DataTable = ({ items }: dataTable) => {
         <div className="dataTable">
             <div
                 className="dataTable_header_row"
-                style={{ ["--cols" as any]: items.length }}
+                style={{ ["--cols" as any]: headerItems?.length }}
             >
-                {items.map((item) => (
-                    <DataTableHeader label={item.label} />
+                {headerItems?.map((item) => (
+                    <DataTableHeader key={item.label} label={item.label} />
                 ))}
             </div>
-            <DataTableRow />
+            <DataTableRow rows={rows} columns={columns} />
             <div className="pagination_wrap">
                 <Pagination
                     totalItems={totalUsers}

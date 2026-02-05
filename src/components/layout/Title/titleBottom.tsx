@@ -1,18 +1,19 @@
 import ListToolbar from "./listToolbar";
+import { ListToolbarProps } from "./title.type";
 
-const TitleBottom = ({ info }: { info: string }) => {
+const TitleBottom = ({
+    info,
+}: // type,
+{
+    info: string;
+    // type: ListToolbarProps;
+}) => {
     return (
         <div className="title_bottom">
             <div>
                 <div className="title_bottom_info">{info}</div>
                 <div>
-                    <ListToolbar
-                        search={{
-                            value: "",
-                            onChange: () => console.log(test),
-                            placeholder: "",
-                        }}
-                    />
+                    <ListToolbar />
                 </div>
             </div>
         </div>
