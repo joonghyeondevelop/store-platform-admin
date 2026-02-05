@@ -1,8 +1,20 @@
 import { Dispatch, SetStateAction } from "react";
 
-export type dataTable = {
-    items: dataTableHeader[];
+export type Column<T> = {
+    key: string;
+    header?: string;
+    width?: string;
+    render: (row: T) => React.ReactNode;
 };
+
+export type DataGridProps<T> = {
+    headerItems?: dataTableHeader[];
+    rows: T[];
+    columns: Column<T>[];
+    pageSize?: number;
+};
+
+export type dataTable = {};
 
 export type dataTableHeader = {
     label: string;
