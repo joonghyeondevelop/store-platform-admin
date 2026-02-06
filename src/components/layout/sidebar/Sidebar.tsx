@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import "./sidebar.css";
 import SidebarGroup from "./SidebarGroup";
 
 const Sidebar = () => {
+    const nav = useNavigate();
     return (
         <div className="sidebar">
             <SidebarGroup
@@ -9,7 +11,7 @@ const Sidebar = () => {
                 item={[
                     {
                         label: "일반 유저 관리",
-                        onClick: () => console.log("test"),
+                        onClick: () => nav("/users?page=1"),
                     },
                 ]}
             />
@@ -18,7 +20,7 @@ const Sidebar = () => {
                 item={[
                     {
                         label: "주문 리스트",
-                        onClick: () => console.log("test"),
+                        onClick: () => nav("/order?page=1"),
                     },
                 ]}
             />
@@ -27,7 +29,7 @@ const Sidebar = () => {
                 item={[
                     {
                         label: "상품 리스트",
-                        onClick: () => console.log("test"),
+                        onClick: () => nav("/product?page=1"),
                     },
                 ]}
             />

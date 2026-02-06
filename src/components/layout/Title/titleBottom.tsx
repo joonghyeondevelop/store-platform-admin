@@ -1,19 +1,19 @@
 import ListToolbar from "./listToolbar";
-import { ListToolbarProps } from "./title.type";
+import { TitleToolbar } from "./title.type";
 
 const TitleBottom = ({
     info,
-}: // type,
-{
+    toolbar,
+}: {
     info: string;
-    // type: ListToolbarProps;
+    toolbar: TitleToolbar;
 }) => {
     return (
         <div className="title_bottom">
             <div>
                 <div className="title_bottom_info">{info}</div>
                 <div>
-                    <ListToolbar />
+                    <ListToolbar toolbar={toolbar} />
                 </div>
             </div>
         </div>
