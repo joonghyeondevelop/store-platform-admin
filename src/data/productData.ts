@@ -1,6 +1,6 @@
 import { Category, Product } from "./productData.type";
 
-export const products: Product[] = [
+export const mockProducts: Product[] = [
     {
         id: "1",
         name: "유기농 당근",

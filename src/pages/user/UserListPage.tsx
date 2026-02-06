@@ -19,6 +19,13 @@ const UserListPage = () => {
         <div className="userListPage">
             <TitleGroup
                 items={{ title: "유저관리", subTitle: "일반 유저 관리" }}
+                toolbar={{
+                    element: "search",
+                    value: "",
+                    // onChange: (v) => setValue(v),
+                    onChange: (v) => console.log(v),
+                    placeholder: "검색",
+                }}
             />
             <DataTable
                 headerItems={[

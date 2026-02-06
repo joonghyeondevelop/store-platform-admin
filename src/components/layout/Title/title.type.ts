@@ -1,16 +1,6 @@
-export type titleProps = {
-    items: titleTopProps;
-};
-
 export type titleTopProps = {
     title: string;
     subTitle: string;
-};
-
-export type ToolbarAction = {
-    label: string;
-    onClick: () => void;
-    variant?: "primary" | "secondary";
 };
 
 export type StatusOption = {
@@ -18,23 +8,30 @@ export type StatusOption = {
     value: string;
 };
 
-export type ListToolbarProps = {
-    actions?: ToolbarAction[];
-
-    search?: {
-        value: string;
-        onChange: (v: string) => void;
-        placeholder?: string;
-    };
-
-    statusFilter?: {
-        value: string;
-        onChange: (v: string) => void;
-        options: StatusOption[];
-    };
+export type ToolbarAction = {
+    label: string;
+    onClick: () => void;
 };
 
-export type titleBottomProps = {
-    info: string;
-    toolbar: ListToolbarProps;
+export type TitleToolbar =
+    | {
+          element: "search";
+          value: string;
+          onChange: (v: string) => void;
+          placeholder?: string;
+      }
+    | {
+          element: "action";
+          actions: ToolbarAction[];
+      }
+    | {
+          element: "statusFilter";
+          value: string;
+          onChange: (v: string) => void;
+          options: StatusOption[];
+      };
+
+export type TitleProps = {
+    items: titleTopProps;
+    toolbar: TitleToolbar;
 };
