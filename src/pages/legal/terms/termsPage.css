@@ -1,0 +1,42 @@
+.termsPage {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 24px;
+    padding: 24px;
+}
+
+.termsTable {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 24px 20px 24px;
+    flex-grow: 1;
+    min-height: 0px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+}
+
+.textareaWrap {
+    flex: 1;
+    min-height: 0;
+    padding: 12px;
+}
+
+.textareaWrap > div {
+    display: flex;
+    flex: 1;
+    min-height: 100%;
+}
+
+.textareaWrap > div > textarea {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    resize: none;
+    background-color: transparent;
+    border-color: #e6e6e6;
+    border-style: none;
+    line-height: 1.4;
+    font-size: 16px;
+    font-weight: 500;
+}

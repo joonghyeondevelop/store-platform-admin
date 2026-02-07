@@ -56,11 +56,11 @@ const Sidebar = () => {
                 item={[
                     {
                         label: "서비스 이용약관",
-                        onClick: () => console.log("test"),
+                        onClick: () => nav("/legal/terms"),
                     },
                     {
                         label: "개인정보처리 방침",
-                        onClick: () => console.log("test"),
+                        onClick: () => nav("/legal/privacy"),
                     },
                 ]}
             />
