@@ -1,4 +1,4 @@
-import { Category, Product } from "./productData.type";
+import { Product } from "./productData.type";
 
 export const mockProducts: Product[] = [
     {
@@ -43,10 +43,4 @@ export const mockProducts: Product[] = [
         image: "https://picsum.photos/seed/apple/1200/1200",
         createdAt: "2026-02-06",
     },
-];
-
-export const categories: Category[] = [
-    { id: 0, label: "전체", value: "ALL" },
-    { id: 1, label: "채소", value: "VEGETABLE" },
-    { id: 2, label: "과일", value: "FRUIT" },
 ];

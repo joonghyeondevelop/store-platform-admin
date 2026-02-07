@@ -1,5 +1,5 @@
 import { Column } from "../../components/table/DataTable/dataTable.type";
-import { Order } from "../../data/orderData.type";
+import { Order } from "../../data/order/orderData.type";
 
 const orderColumn: Column<Order>[] = [
     {

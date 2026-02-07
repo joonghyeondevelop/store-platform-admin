@@ -1,6 +1,6 @@
 import { Order } from "./orderData.type";
-import { mockProducts } from "./productData";
-import { mockUsers } from "./userData";
+import { mockProducts } from "../product/productData";
+import { mockUsers } from "../user/userData";
 
 export const mockOrders: Order[] = [
     {

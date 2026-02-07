@@ -1,12 +1,12 @@
 import "./productListPage.css";
 import TitleGroup from "../../components/layout/Title/titleGroup";
 import DataTable from "../../components/table/DataTable/DataTable";
-import { mockProducts } from "../../data/productData";
+import { mockProducts } from "../../data/product/productData";
 import productColumn from "./productColumn";
 
 const ProductListPage = () => {
     return (
-        <div className="userListPage">
+        <div className="productListPage">
             <TitleGroup
                 items={{ title: "상품 등록", subTitle: "주문 리스트" }}
                 toolbar={{

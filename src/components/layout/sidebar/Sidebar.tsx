@@ -38,7 +38,7 @@ const Sidebar = () => {
                 item={[
                     {
                         label: "카테고리 리스트",
-                        onClick: () => console.log("test"),
+                        onClick: () => nav("/category?page=1"),
                     },
                 ]}
             />
@@ -47,7 +47,7 @@ const Sidebar = () => {
                 item={[
                     {
                         label: "공지 리스트",
-                        onClick: () => console.log("test"),
+                        onClick: () => nav("/notification?page=1"),
                     },
                 ]}
             />
@@ -56,11 +56,11 @@ const Sidebar = () => {
                 item={[
                     {
                         label: "서비스 이용약관",
-                        onClick: () => console.log("test"),
+                        onClick: () => nav("/legal/terms"),
                     },
                     {
                         label: "개인정보처리 방침",
-                        onClick: () => console.log("test"),
+                        onClick: () => nav("/legal/privacy"),
                     },
                 ]}
             />
@@ -69,7 +69,7 @@ const Sidebar = () => {
                 item={[
                     {
                         label: "알람 관리",
-                        onClick: () => console.log("test"),
+                        onClick: () => nav("/alarm?page=1"),
                     },
                 ]}
             />

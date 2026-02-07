@@ -1,5 +1,5 @@
 import { Column } from "../../components/table/DataTable/dataTable.type";
-import { Product } from "../../data/productData.type";
+import { Product } from "../../data/product/productData.type";
 
 const productColumn: Column<Product>[] = [
     {
