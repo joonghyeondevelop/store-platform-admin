@@ -7,6 +7,7 @@ import CategoryListPage from "../pages/category/CategoryListPage";
 import NotificationListPage from "../pages/notification/NotificationListPage";
 import TermsPage from "../pages/legal/terms/TermsPage";
 import PrivacyPage from "../pages/legal/privacy/PrivacyPage";
+import AlarmListPage from "../pages/alarm/AlarmListPage";
 
 const Router = () => {
     return (
@@ -24,6 +25,7 @@ const Router = () => {
                     />
                     <Route path="/legal/terms" element={<TermsPage />} />
                     <Route path="/legal/privacy" element={<PrivacyPage />} />
+                    <Route path="/alarm" element={<AlarmListPage />} />
                 </Route>
             </Routes>
         </BrowserRouter>

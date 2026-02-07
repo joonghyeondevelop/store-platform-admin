@@ -69,7 +69,7 @@ const Sidebar = () => {
                 item={[
                     {
                         label: "알람 관리",
-                        onClick: () => console.log("test"),
+                        onClick: () => nav("/alarm?page=1"),
                     },
                 ]}
             />

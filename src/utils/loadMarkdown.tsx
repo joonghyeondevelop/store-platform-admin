@@ -5,7 +5,6 @@ export default function LoadMarkdown({ md }: { md: string }) {
     const [markdown, setMarkdown] = useState("");
 
     useEffect(() => {
-        console.log(md);
         fetch(md)
             .then((response) => response.text())
             .then((text) => setMarkdown(text));
