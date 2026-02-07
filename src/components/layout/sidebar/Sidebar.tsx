@@ -38,7 +38,7 @@ const Sidebar = () => {
                 item={[
                     {
                         label: "카테고리 리스트",
-                        onClick: () => console.log("test"),
+                        onClick: () => nav("/category?page=1"),
                     },
                 ]}
             />

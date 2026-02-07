@@ -6,7 +6,7 @@ import productColumn from "./productColumn";
 
 const ProductListPage = () => {
     return (
-        <div className="userListPage">
+        <div className="productListPage">
             <TitleGroup
                 items={{ title: "상품 등록", subTitle: "주문 리스트" }}
                 toolbar={{

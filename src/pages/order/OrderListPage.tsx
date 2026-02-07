@@ -1,3 +1,4 @@
+import "./orderListPage.css";
 import TitleGroup from "../../components/layout/Title/titleGroup";
 import DataTable from "../../components/table/DataTable/DataTable";
 import { mockOrders } from "../../data/orderData";
@@ -5,7 +6,7 @@ import orderColumn from "./orderColumn";
 
 const OrderListPage = () => {
     return (
-        <div className="userListPage">
+        <div className="orderListPage">
             <TitleGroup
                 items={{ title: "주문 관리", subTitle: "주문 리스트" }}
                 toolbar={{

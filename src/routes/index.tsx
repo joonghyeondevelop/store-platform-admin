@@ -3,6 +3,7 @@ import UserListPage from "../pages/user/UserListPage";
 import AdminLayout from "../components/layout/AdminLayout";
 import ProductListPage from "../pages/product/ProductListPage";
 import OrderListPage from "../pages/order/OrderListPage";
+import CategoryListPage from "../pages/category/CategoryListPage";
 
 const Router = () => {
     return (
@@ -13,6 +14,7 @@ const Router = () => {
                     <Route path="/users" element={<UserListPage />} />
                     <Route path="/product" element={<ProductListPage />} />
                     <Route path="/order" element={<OrderListPage />} />
+                    <Route path="/category" element={<CategoryListPage />} />
                 </Route>
             </Routes>
         </BrowserRouter>

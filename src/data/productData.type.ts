@@ -5,9 +5,3 @@ export type Product = {
     image: string;
     createdAt: string;
 };
-
-export type Category = {
-    id: number;
-    label: string;
-    value: "ALL" | "VEGETABLE" | "FRUIT";
-};
