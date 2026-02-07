@@ -47,7 +47,7 @@ const Sidebar = () => {
                 item={[
                     {
                         label: "공지 리스트",
-                        onClick: () => console.log("test"),
+                        onClick: () => nav("/notification?page=1"),
                     },
                 ]}
             />

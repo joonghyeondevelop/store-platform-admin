@@ -1,7 +1,7 @@
 import "./categoryListPage.css";
 import TitleGroup from "../../components/layout/Title/titleGroup";
 import DataTable from "../../components/table/DataTable/DataTable";
-import { mockCategory } from "../../data/categoryData";
+import { mockCategory } from "../../data/category/categoryData";
 import { categoryColumn } from "./categoryColumn";
 
 const CategoryListPage = () => {

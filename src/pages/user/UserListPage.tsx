@@ -1,7 +1,7 @@
 import "./userListPage.css";
 import TitleGroup from "../../components/layout/Title/titleGroup";
 import DataTable from "../../components/table/DataTable/DataTable";
-import { mockUsers } from "../../data/userData";
+import { mockUsers } from "../../data/user/userData";
 import { userColumns } from "./userColumn";
 
 const UserListPage = () => {

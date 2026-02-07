@@ -1,7 +1,7 @@
 import "./orderListPage.css";
 import TitleGroup from "../../components/layout/Title/titleGroup";
 import DataTable from "../../components/table/DataTable/DataTable";
-import { mockOrders } from "../../data/orderData";
+import { mockOrders } from "../../data/order/orderData";
 import orderColumn from "./orderColumn";
 
 const OrderListPage = () => {

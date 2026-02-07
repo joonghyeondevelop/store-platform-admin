@@ -1,0 +1,7 @@
+.notificationListPage {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 24px;
+    padding: 24px;
+}

@@ -1,7 +1,7 @@
 import "./productListPage.css";
 import TitleGroup from "../../components/layout/Title/titleGroup";
 import DataTable from "../../components/table/DataTable/DataTable";
-import { mockProducts } from "../../data/productData";
+import { mockProducts } from "../../data/product/productData";
 import productColumn from "./productColumn";
 
 const ProductListPage = () => {

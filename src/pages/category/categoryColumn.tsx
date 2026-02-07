@@ -1,5 +1,5 @@
 import { Column } from "../../components/table/DataTable/dataTable.type";
-import { Category } from "../../data/categoryData.type";
+import { Category } from "../../data/category/categoryData.type";
 import UpArrow from "@mui/icons-material/ExpandLess";
 import DownArrow from "@mui/icons-material/ExpandMore";
 

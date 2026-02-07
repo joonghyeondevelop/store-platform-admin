@@ -1,5 +1,5 @@
 import { Column } from "../../components/table/DataTable/dataTable.type";
-import { User } from "../../data/userData.type";
+import { User } from "../../data/user/userData.type";
 
 export const userColumns: Column<User>[] = [
     { key: "joinedAt", render: (u) => u.joinedAt },

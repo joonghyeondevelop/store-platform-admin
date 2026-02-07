@@ -4,6 +4,7 @@ import AdminLayout from "../components/layout/AdminLayout";
 import ProductListPage from "../pages/product/ProductListPage";
 import OrderListPage from "../pages/order/OrderListPage";
 import CategoryListPage from "../pages/category/CategoryListPage";
+import NotificationListPage from "../pages/notification/NotificationListPage";
 
 const Router = () => {
     return (
@@ -15,6 +16,10 @@ const Router = () => {
                     <Route path="/product" element={<ProductListPage />} />
                     <Route path="/order" element={<OrderListPage />} />
                     <Route path="/category" element={<CategoryListPage />} />
+                    <Route
+                        path="/notification"
+                        element={<NotificationListPage />}
+                    />
                 </Route>
             </Routes>
         </BrowserRouter>
