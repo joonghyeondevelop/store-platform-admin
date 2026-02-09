@@ -8,12 +8,22 @@ import NotificationListPage from "../pages/notification/NotificationListPage";
 import TermsPage from "../pages/legal/terms/TermsPage";
 import PrivacyPage from "../pages/legal/privacy/PrivacyPage";
 import AlarmListPage from "../pages/alarm/AlarmListPage";
+import { ModalProvider } from "../components/layout/modal/ModalProvider";
+import ModalRoot from "../components/layout/modal/ModalRoot";
 
 const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route element={<AdminLayout />}>
+                <Route
+                    element={
+                        <ModalProvider>
+                            <ModalRoot>
+                                <AdminLayout />
+                            </ModalRoot>
+                        </ModalProvider>
+                    }
+                >
                     <Route path="/" element={<Navigate to={"/users"} />} />
                     <Route path="/users" element={<UserListPage />} />
                     <Route path="/product" element={<ProductListPage />} />
