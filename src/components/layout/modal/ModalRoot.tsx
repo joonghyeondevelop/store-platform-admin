@@ -1,14 +1,31 @@
-import { PropsWithChildren, createContext, useCallback, useState } from "react";
-import { useToggle } from "../../../hooks/useToggle";
-import { ModalContextValue } from "./modal.type";
+import Modal from "./Modal";
+import { useModalContext } from "../../../hooks/useModalContext";
 
-export const ModalContext = createContext<ModalContextValue | null>(null);
+const ModalRoot = () => {
+    const { open, type, onClose } = useModalContext();
 
-const ModalRoot = ({ children }: PropsWithChildren) => {
-    const toggle = useToggle(); // { open, onOpen, onClose } 형태라고 가정
-    return (
-        <ModalContext.Provider value={toggle}>{children}</ModalContext.Provider>
-    );
+    if (!open || !type) return null;
+
+    switch (type) {
+        case "PRODUCT":
+            return (
+                <Modal title={"상품"} content={"콘텐츠"} onClose={onClose} />
+            );
+        case "CATEGORY":
+            return (
+                <Modal
+                    title={"카테고리"}
+                    content={"콘텐츠"}
+                    onClose={onClose}
+                />
+            );
+        case "NOTICE":
+        // return <NoticeModal onClose={onClose} />;
+        case "PUSH":
+        // return <PushModal onClose={onClose} />;
+        default:
+            return null;
+    }
 };
 
 export default ModalRoot;

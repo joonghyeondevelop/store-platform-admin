@@ -1,28 +1,17 @@
-import React, { createContext, useContext, useMemo, useState } from "react";
-import { ModalContextValue } from "./modal.type";
-
-const ModalContext = createContext<ModalContextValue | null>(null);
+import React, { useEffect } from "react";
+import { ModalContext } from "./modalContext";
+import { useToggle } from "../../../hooks/useToggle";
+import { useLocation } from "react-router-dom";
 
 export function ModalProvider({ children }: { children: React.ReactNode }) {
-    const [open, setOpen] = useState(false);
+    const value = useToggle();
+    const location = useLocation();
 
-    const value = useMemo(
-        () => ({
-            open,
-            onOpen: () => setOpen(true),
-            onClose: () => setOpen(false),
-        }),
-        [open]
-    );
+    useEffect(() => {
+        value.onClose();
+    }, [location.pathname]);
 
     return (
         <ModalContext.Provider value={value}>{children}</ModalContext.Provider>
     );
-}
-
-export function useModalContext() {
-    const ctx = useContext(ModalContext);
-    if (!ctx)
-        throw new Error("useModalContext must be used within ModalProvider");
-    return ctx;
 }

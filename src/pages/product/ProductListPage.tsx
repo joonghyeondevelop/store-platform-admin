@@ -3,8 +3,11 @@ import TitleGroup from "../../components/layout/Title/titleGroup";
 import DataTable from "../../components/table/DataTable/DataTable";
 import { mockProducts } from "../../data/product/productData";
 import productColumn from "./productColumn";
+import { useModalContext } from "../../hooks/useModalContext";
 
 const ProductListPage = () => {
+    const modal = useModalContext();
+
     return (
         <div className="productListPage">
             <TitleGroup
@@ -14,7 +17,7 @@ const ProductListPage = () => {
                     actions: [
                         {
                             label: "상품 등록",
-                            onClick: () => console.log("상품 등록 버튼"),
+                            onClick: () => modal.onOpen("PRODUCT"),
                         },
                     ],
                 }}

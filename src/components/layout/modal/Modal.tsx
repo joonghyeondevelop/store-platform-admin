@@ -1,3 +1,5 @@
+import "./modal.css";
+
 type Props = {
     title: string;
     content: string;
@@ -6,11 +8,14 @@ type Props = {
 
 const Modal = ({ title, content, onClose }: Props) => {
     return (
-        <div>
-            {title && <div>{title}</div>}
-            {content && <div>{content}</div>}
-            <div className="footer">
-                <button onClick={onClose}>닫기</button>
+        <div className="modal_background">
+            <div className="modal">
+                {title && <div>{title}</div>} {/* 버튼 이름 + x 버튼 */}
+                {content && <div>{content}</div>} {/* 페이지마다 들어갈 것 */}
+                <div className="footer">
+                    <button onClick={onClose}>닫기</button>{" "}
+                    {/* 등록하기 버튼을 닫기 + 업로드로 */}
+                </div>
             </div>
         </div>
     );

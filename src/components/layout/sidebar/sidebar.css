@@ -43,6 +43,11 @@
 }
 
 .activeItem {
+    border-radius: 16px;
     background-color: #f3f3f3;
+    color: #ff7f2a;
+}
+
+.activeItemHeader {
     color: #ff7f2a;
 }
