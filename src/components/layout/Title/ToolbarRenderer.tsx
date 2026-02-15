@@ -15,7 +15,11 @@ export function renderToolbar(toolbar: TitleToolbar) {
             return (
                 <>
                     {toolbar.actions.map((a) => (
-                        <button key={a.label} onClick={a.onClick}>
+                        <button
+                            key={a.label}
+                            onClick={a.onClick}
+                            className="toolbarButton"
+                        >
                             {a.label}
                         </button>
                     ))}

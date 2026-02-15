@@ -1,20 +1,20 @@
+import React from "react";
 import "./modal.css";
 
 type Props = {
-    title: string;
-    content: string;
-    onClose: () => void;
+    title: React.ReactNode;
+    children: React.ReactNode;
+    footer: React.ReactNode;
 };
 
-const Modal = ({ title, content, onClose }: Props) => {
+const Modal = ({ title, children, footer }: Props) => {
     return (
-        <div className="modal_background">
+        <div className="modalBackground">
             <div className="modal">
-                {title && <div>{title}</div>} {/* 버튼 이름 + x 버튼 */}
-                {content && <div>{content}</div>} {/* 페이지마다 들어갈 것 */}
-                <div className="footer">
-                    <button onClick={onClose}>닫기</button>{" "}
-                    {/* 등록하기 버튼을 닫기 + 업로드로 */}
+                <div className="modalWrap">
+                    {title}
+                    {children}
+                    {footer}
                 </div>
             </div>
         </div>

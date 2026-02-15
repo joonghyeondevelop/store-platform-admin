@@ -1,0 +1,17 @@
+.productImageInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #e1e6ef;
+    padding: 4px 16px 4px 16px;
+    height: 40px;
+    border-radius: 14px;
+}
+
+.productImageInput > span:nth-child(1) {
+    color: #adb8cc;
+    font-size: 14px;
+    font-weight: 500;
+}
