@@ -3,14 +3,27 @@ import { Items } from "./ModalInput.type";
 import { useEffect, useState } from "react";
 // import Inko from "inko";
 
-const ModalInput = ({ placeholder, type }: Items) => {
-    const [value, setValue] = useState<string>("");
+const ModalInput = ({ placeholder, type, titleLimit }: Items) => {
+    const [title, setTitle] = useState<string>("");
+    const [priceValue, setPriceValue] = useState<string>("");
+    const [priceDisPlay, setPriceDisPlay] = useState<string>("");
 
     let valueLength;
 
     useEffect(() => {
-        valueLength = value.length;
-    }, [value]);
+        valueLength = title.length;
+    }, [title]);
+
+    const formatNumber = (value: string) => {
+        if (!value) return "";
+        return Number(value).toLocaleString("ko-KR");
+    };
+
+    const handlePrice = (text: string) => {
+        const digits = text.replace(/[^\d]/g, ""); // 숫자만
+        setPriceValue(digits);
+        setPriceDisPlay(formatNumber(digits));
+    };
 
     // const handleInput = (text: string) => {
     //     const isEnglish = (text: string) => /^[A-Za-z\s]+$/.test(text);
@@ -27,14 +40,24 @@ const ModalInput = ({ placeholder, type }: Items) => {
         <div className="inputStyle">
             <input
                 type="text"
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
+                value={type === "TITLE" ? title : priceDisPlay}
+                maxLength={type === "TITLE" ? titleLimit : 12}
+                onChange={(e) => {
+                    type === "TITLE"
+                        ? setTitle(e.target.value)
+                        : handlePrice(e.target.value);
+                }}
                 placeholder={placeholder}
             />
             {type === "TITLE" && (
                 <div>
-                    <span>{value.length}</span>
-                    <span>&nbsp;30</span>
+                    <span>{title.length}</span>
+                    <span>&nbsp;{titleLimit}</span>
+                </div>
+            )}
+            {type === "PRICE" && (
+                <div>
+                    <span>원</span>
                 </div>
             )}
         </div>

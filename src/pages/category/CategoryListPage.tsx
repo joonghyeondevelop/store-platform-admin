@@ -3,8 +3,10 @@ import TitleGroup from "../../components/layout/Title/titleGroup";
 import DataTable from "../../components/table/DataTable/DataTable";
 import { mockCategory } from "../../data/category/categoryData";
 import { categoryColumn } from "./categoryColumn";
+import { useModalContext } from "../../hooks/useModalContext";
 
 const CategoryListPage = () => {
+    const modal = useModalContext();
     return (
         <div className="categoryListPage">
             <TitleGroup
@@ -14,7 +16,7 @@ const CategoryListPage = () => {
                     actions: [
                         {
                             label: "등록하기",
-                            onClick: () => console.log("카테고리 등록 버튼"),
+                            onClick: () => modal.onOpen("CATEGORY"),
                         },
                     ],
                 }}

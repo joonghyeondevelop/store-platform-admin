@@ -19,6 +19,7 @@ const ModalProduct = ({ items }: Props) => {
                                 key={item.type}
                                 placeholder={item.placeholder}
                                 type={item.type}
+                                titleLimit={item.titleLimit}
                             />
                         ))}
                     </div>
