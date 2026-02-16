@@ -1,3 +1,33 @@
+.modalProductWrap > div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+
+.modalBodyTop {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modalBodyTop > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.productImage {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.productImage > div:nth-child(1) {
+    color: #8793a8;
+    font-size: 14px;
+    font-weight: 500;
+}
+
 .productImageInput {
     display: flex;
     flex-direction: row;
@@ -14,4 +44,64 @@
     color: #adb8cc;
     font-size: 14px;
     font-weight: 500;
+}
+
+.productImageUpload > button {
+    color: #ff7f2a;
+    background-color: #ffffff;
+    border: 1px solid #ff7f2a;
+    min-width: 59px;
+    min-height: 34px;
+    font-size: 14px;
+    border-radius: 14px;
+}
+
+.productDetail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 300px;
+    border-radius: 12px;
+    border: 1px solid #e1e6ef;
+    background-color: #f9f9f9;
+    padding: 16px;
+    flex-grow: 1;
+}
+
+.productDetailTextArea {
+    display: flex;
+    flex-grow: 1;
+}
+
+.productDetailImageList {
+    flex-grow: 0;
+    min-height: 34px;
+    border-bottom: 1px solid #ebeff5;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.productDetailImageList > svg {
+    width: 22px;
+    height: 22px;
+    color: #9292a1;
+}
+
+.productDetailTextArea > textarea {
+    flex-grow: 1;
+    background-color: transparent;
+    border-color: #f9f9f9;
+    font-size: 14px;
+    font-weight: 400;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.productDetailTextArea > textarea::placeholder {
+    color: #9292a1;
+}
+
+.productDetailTextArea > textarea:focus {
+    outline: none;
 }
