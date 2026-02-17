@@ -1,16 +1,26 @@
 import { useModalContext } from "../../../hooks/useModalContext";
+import { ModalType } from "./modal.type";
 
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement>;
+type ModalTriggerProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    modalType: ModalType;
+};
 
-export function ModalTrigger(props: Props) {
-    const { children, ...rest } = props;
+export function ModalTrigger({
+    modalType,
+    children,
+    ...rest
+}: ModalTriggerProps) {
     const context = useModalContext();
 
     const onToggle = (event: React.MouseEvent<HTMLButtonElement>) => {
-        props.onClick?.(event);
-        (context.open ? context.onClose : context.onOpen)();
-    };
+        rest.onClick?.(event);
 
+        if (context.open && context.type === modalType) {
+            context.onClose();
+        } else {
+            context.onOpen(modalType);
+        }
+    };
     return (
         <button type="button" onClick={onToggle} {...rest}>
             {children}

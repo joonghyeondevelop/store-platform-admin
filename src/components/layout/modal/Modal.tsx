@@ -1,16 +1,21 @@
+import React from "react";
+import "./modal.css";
+
 type Props = {
-    title: string;
-    content: string;
-    onClose: () => void;
+    title: React.ReactNode;
+    children: React.ReactNode;
+    footer: React.ReactNode;
 };
 
-const Modal = ({ title, content, onClose }: Props) => {
+const Modal = ({ title, children, footer }: Props) => {
     return (
-        <div>
-            {title && <div>{title}</div>}
-            {content && <div>{content}</div>}
-            <div className="footer">
-                <button onClick={onClose}>닫기</button>
+        <div className="modalBackground">
+            <div className="modal">
+                <div className="modalWrap">
+                    {title}
+                    {children}
+                    {footer}
+                </div>
             </div>
         </div>
     );

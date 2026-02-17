@@ -3,8 +3,10 @@ import TitleGroup from "../../components/layout/Title/titleGroup";
 import DataTable from "../../components/table/DataTable/DataTable";
 import { mockNotifications } from "../../data/notification/notificationData";
 import { notificationColum } from "./notificationColumn";
+import { useModalContext } from "../../hooks/useModalContext";
 
 const NotificationListPage = () => {
+    const modal = useModalContext();
     return (
         <div className="notificationListPage">
             <TitleGroup
@@ -14,7 +16,7 @@ const NotificationListPage = () => {
                     actions: [
                         {
                             label: "등록하기",
-                            onClick: () => console.log("공지 인앱 등록"),
+                            onClick: () => modal.onOpen("NOTIFICATION"),
                         },
                     ],
                 }}

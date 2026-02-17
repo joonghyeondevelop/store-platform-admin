@@ -1,0 +1,40 @@
+.inputStyle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border: 1px solid #e1e6ef;
+    padding: 4px 16px 4px 16px;
+    height: 50px;
+    border-radius: 14px;
+}
+
+.inputStyle > input {
+    border: none;
+    background-color: #f9f9f9;
+    width: 90%;
+    font-size: 16px;
+    /* ime-mode: active; */
+}
+
+.inputStyle > input:focus {
+    outline: none;
+}
+
+.inputStyle > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.inputStyle > div > span:nth-child(1) {
+    color: #9292a1;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.inputStyle > div > span:nth-child(2) {
+    color: #d8d8dd;
+    font-size: 14px;
+    font-weight: 600;
+}

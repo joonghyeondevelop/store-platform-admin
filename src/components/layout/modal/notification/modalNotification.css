@@ -1,0 +1,11 @@
+.modalNotification {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.modalNotificationTop {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

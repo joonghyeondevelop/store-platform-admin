@@ -1,9 +1,11 @@
 import TitleGroup from "../../components/layout/Title/titleGroup";
 import DataTable from "../../components/table/DataTable/DataTable";
 import { mockAlarm } from "../../data/alarm/alarmData";
+import { useModalContext } from "../../hooks/useModalContext";
 import { alarmColumn } from "./alarmColumn";
 
 const AlarmListPage = () => {
+    const modal = useModalContext();
     return (
         <div className="userListPage">
             <TitleGroup
@@ -13,7 +15,7 @@ const AlarmListPage = () => {
                     actions: [
                         {
                             label: "알람 등록",
-                            onClick: () => console.log("알람 버튼"),
+                            onClick: () => modal.onOpen("PUSH"),
                         },
                     ],
                 }}

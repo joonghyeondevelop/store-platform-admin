@@ -1,12 +1,8 @@
 import { useContext } from "react";
-import { ModalContext } from "../components/layout/modal/ModalRoot";
+import { ModalContext } from "../components/layout/modal/modalContext";
 
-export const useModalContext = () => {
-    const context = useContext(ModalContext);
-
-    if (!context) {
-        throw new Error("useModalContext must be used within <ModalRoot />");
-    }
-
-    return context;
-};
+export function useModalContext() {
+    const ctx = useContext(ModalContext);
+    if (!ctx) throw new Error("ModalProvider로 감싸져 있지 않습니다.");
+    return ctx;
+}
