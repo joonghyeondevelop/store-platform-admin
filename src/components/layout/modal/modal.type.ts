@@ -5,4 +5,4 @@ export type ModalContextValue = {
     type: ModalType;
 };
 
-export type ModalType = "PRODUCT" | "CATEGORY" | "NOTICE" | "PUSH" | null;
+export type ModalType = "PRODUCT" | "CATEGORY" | "NOTIFICATION" | "PUSH" | null;

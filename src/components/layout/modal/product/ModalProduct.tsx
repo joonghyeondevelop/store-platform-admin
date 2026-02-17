@@ -1,41 +1,46 @@
 import "./modalProduct.css";
-import { Items } from "../../../common/modalInput/ModalInput.type";
-import ModalInput from "../../../common/modalInput/ModalInput";
+import React, { useState } from "react";
 import LaunchIcon from "@mui/icons-material/Launch";
+import ModalInput from "../../../common/modalInput/ModalInput";
+import UploadImageInput from "../../../common/uploadInput/UploadInput";
+import { ModalItems } from "../../../common/modalInput/ModalInput.type";
 
 type Props = {
-    items: Items[];
+    items: ModalItems[];
 };
 
 const ModalProduct = ({ items }: Props) => {
+    const [title, setTitle] = useState("");
+    const [price, setPrice] = useState("");
+    const [detail, setDetail] = useState("");
+
+    const getValue = (type: ModalItems["type"]) =>
+        type === "TITLE" ? title : price;
+    const getSetter = (type: ModalItems["type"]) =>
+        type === "TITLE" ? setTitle : setPrice;
+
     return (
         <div className="modalProductWrap">
             <div>
                 <div className="modalBodyTop">
                     <div>카테고리 선택 라인</div>
+
                     <div>
                         {items.map((item) => (
                             <ModalInput
                                 key={item.type}
-                                placeholder={item.placeholder}
                                 type={item.type}
+                                placeholder={item.placeholder}
                                 titleLimit={item.titleLimit}
+                                value={getValue(item.type)}
+                                onChange={getSetter(item.type)}
                             />
                         ))}
                     </div>
                 </div>
-                <div className="productImage">
-                    <div>상품 이미지</div>
-                    <div className="productImageInput">
-                        <span>
-                            이미지 업로드 *규격25mb 이하 png,jpg 권장 사이즈:
-                            800*600px
-                        </span>
-                        <span className="productImageUpload">
-                            <button>업로드</button>
-                        </span>
-                    </div>
-                </div>
+
+                <UploadImageInput />
+
                 <div className="productDetail">
                     <div className="productDetailImageList">
                         <LaunchIcon />
@@ -44,10 +49,13 @@ const ModalProduct = ({ items }: Props) => {
                         <LaunchIcon />
                         <LaunchIcon />
                     </div>
+
                     <div className="productDetailTextArea">
                         <textarea
                             name="productDetailTextArea"
                             placeholder="제품 상세 설명"
+                            value={detail}
+                            onChange={(e) => setDetail(e.target.value)}
                         />
                     </div>
                 </div>

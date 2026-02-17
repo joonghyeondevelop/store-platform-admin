@@ -1,0 +1,39 @@
+.productImage {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.productImage > div:nth-child(1) {
+    color: #8793a8;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.productImageInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #e1e6ef;
+    padding: 4px 16px 4px 16px;
+    height: 40px;
+    border-radius: 14px;
+}
+
+.productImageInput > span:nth-child(1) {
+    color: #adb8cc;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.productImageUpload > button {
+    color: #ff7f2a;
+    background-color: #ffffff;
+    border: 1px solid #ff7f2a;
+    min-width: 59px;
+    min-height: 34px;
+    font-size: 14px;
+    border-radius: 14px;
+}

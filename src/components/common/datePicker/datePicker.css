@@ -1,0 +1,30 @@
+.datePicker {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    gap: 10px;
+}
+
+.datePickerTitle {
+    color: #8793a8;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.datePickerWrap {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+}
+
+.datePickerWrap .inputStyle {
+    flex: 1;
+    min-width: 0;
+}
+
+.datePickerWrap .inputStyle input {
+    width: 100%;
+    box-sizing: border-box;
+    color: #252525;
+    cursor: pointer;
+}

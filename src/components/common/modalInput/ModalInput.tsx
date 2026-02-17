@@ -1,66 +1,49 @@
-import "./modalInput.css";
-import { Items } from "./ModalInput.type";
-import { useEffect, useState } from "react";
-// import Inko from "inko";
+// import "./modalInput.css";
+import InputShell from "../InputShell/InputShell";
+import { ModalInputProps } from "./ModalInput.type";
+import { formatNumber, stripNonDigits } from "../../../utils/modalUtils";
 
-const ModalInput = ({ placeholder, type, titleLimit }: Items) => {
-    const [title, setTitle] = useState<string>("");
-    const [priceValue, setPriceValue] = useState<string>("");
-    const [priceDisPlay, setPriceDisPlay] = useState<string>("");
-
-    let valueLength;
-
-    useEffect(() => {
-        valueLength = title.length;
-    }, [title]);
-
-    const formatNumber = (value: string) => {
-        if (!value) return "";
-        return Number(value).toLocaleString("ko-KR");
-    };
-
-    const handlePrice = (text: string) => {
-        const digits = text.replace(/[^\d]/g, ""); // 숫자만
-        setPriceValue(digits);
-        setPriceDisPlay(formatNumber(digits));
-    };
-
-    // const handleInput = (text: string) => {
-    //     const isEnglish = (text: string) => /^[A-Za-z\s]+$/.test(text);
-    //     if (() => isEnglish) {
-    //         let inko = new Inko();
-    //         return setValue(inko.en2ko(text));
-    //     }
-
-    //     return setValue(text);
-    // };
-    // 영어 -> 한글 변환 함수인데 단위를 쓸 방법이 없어져서 일단 보류
+const ModalInput = ({
+    type,
+    placeholder,
+    value,
+    onChange,
+    titleLimit = 30,
+}: ModalInputProps) => {
+    const displayValue =
+        type === "PRICE" ? formatNumber(stripNonDigits(value)) : value;
 
     return (
-        <div className="inputStyle">
+        <InputShell
+            right={type === "PRICE" ? <span>원</span> : undefined}
+            bottom={
+                type === "TITLE" ? (
+                    <>
+                        <span>{value.length}</span>
+                        <span>&nbsp;{titleLimit}</span>
+                    </>
+                ) : undefined
+            }
+        >
             <input
                 type="text"
-                value={type === "TITLE" ? title : priceDisPlay}
+                inputMode={type === "PRICE" ? "numeric" : undefined}
+                value={displayValue}
                 maxLength={type === "TITLE" ? titleLimit : 12}
                 onChange={(e) => {
-                    type === "TITLE"
-                        ? setTitle(e.target.value)
-                        : handlePrice(e.target.value);
+                    const next = e.target.value;
+
+                    if (type === "PRICE") {
+                        // 콤마 포함 문자열이 들어오므로 숫자만 추출해서 부모에 저장
+                        onChange(stripNonDigits(next));
+                        return;
+                    }
+
+                    onChange(next);
                 }}
                 placeholder={placeholder}
             />
-            {type === "TITLE" && (
-                <div>
-                    <span>{title.length}</span>
-                    <span>&nbsp;{titleLimit}</span>
-                </div>
-            )}
-            {type === "PRICE" && (
-                <div>
-                    <span>원</span>
-                </div>
-            )}
-        </div>
+        </InputShell>
     );
 };
 
